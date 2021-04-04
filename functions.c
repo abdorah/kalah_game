@@ -130,8 +130,8 @@ void Loadcase(int a, int i, int j, SDL_Renderer* renderer) {
 void LoadAll(struct Partie P, SDL_Renderer* renderer,int turn) {
 
 	SDL_RenderClear(renderer);
-	SDL_Texture* texture = loadTexture("gg.bmp", renderer);
-	SDL_Texture* retour_icon = loadTexture("back_icon.bmp", renderer);
+	SDL_Texture* texture = loadTexture("GameBoard.bmp", renderer);
+	SDL_Texture* retour_icon = loadTexture("undoAction.bmp", renderer);
 	renderTexture12(texture, renderer, 0, 0);
 	renderTexture12(retour_icon, renderer, 425, 223);
 	tourjouer(turn,renderer);
@@ -174,14 +174,14 @@ void congra(int t,int *n,struct Partie P,SDL_Renderer * Ren) {
 	if (!t) {
 		if (P.joueur1[6] < P.joueur2[6]) {
 			SDL_RenderClear(Ren);
-			SDL_Texture* texture = loadTexture("WhatsApp-Image-2020-01-26-at-00.10.43.bmp", Ren);
+			SDL_Texture* texture = loadTexture("Player2Win.bmp", Ren);
 			renderTexture12(texture, Ren, 0, -30);
 			SDL_RenderPresent(Ren);
 			SDL_Delay(6000);
 		}
 		if (P.joueur1[6] > P.joueur2[6]) {
 			SDL_RenderClear(Ren);
-			SDL_Texture* texture = loadTexture("WhatsApp-Image-2020-01-26-at-00.10.45.bmp", Ren);
+			SDL_Texture* texture = loadTexture("Player1Win.bmp", Ren);
 			renderTexture12(texture, Ren, 0, -30);
 			SDL_RenderPresent(Ren);
 			SDL_Delay(6000);

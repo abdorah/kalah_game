@@ -23,7 +23,7 @@ int main( int argc, char* args[] ){
 	SDL_Window* window = SDL_CreateWindow("Kalah",100,100,1024,600,SDL_WINDOW_SHOWN);
     SDL_Renderer *Ren=SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	SDL_RenderClear(Ren);
-	SDL_Texture* texture = loadTexture("01_preview1.bmp", Ren);
+	SDL_Texture* texture = loadTexture("OptionsMenu.bmp", Ren);
 	renderTexture12(texture, Ren, 0, 0);
 	SDL_RenderPresent(Ren);
 	while (!quit) {
@@ -33,7 +33,7 @@ int main( int argc, char* args[] ){
 					t = 257;
 					if (e.button.y > t&& e.button.y < t + 60 && e.button.x < 625 && e.button.x > 397) {
 						SDL_RenderClear(Ren);
-						SDL_Texture* texture = loadTexture("WhatsApp-Image-2020-01-26-at-01.56.24.bmp", Ren);
+						SDL_Texture* texture = loadTexture("InitialisationBoard.bmp", Ren);
 						SDL_Color color = { 255,255,255,255 };
 						renderTexture12(texture, Ren, 0, 0);
 						renderTexture12(renderText(b, "Andrographis.ttf", color, 70, Ren), Ren, 630, 285);
@@ -62,7 +62,7 @@ int main( int argc, char* args[] ){
 						if (atoi(b) < 10) {
 							itoa(atoi(b) + 1, b, 10);
 							SDL_RenderClear(Ren);
-							SDL_Texture* texture = loadTexture("WhatsApp-Image-2020-01-26-at-01.56.24.bmp", Ren);
+							SDL_Texture* texture = loadTexture("InitialisationBoard.bmp", Ren);
 							SDL_Color color = { 255,255,255,255 };
 							renderTexture12(texture, Ren, 0, 0);
 							renderTexture12(renderText(b, "Andrographis.ttf", color, 70, Ren), Ren, 630, 285);
@@ -73,7 +73,7 @@ int main( int argc, char* args[] ){
 						if (atoi(b) > 1) {
 							itoa(atoi(b) - 1, b, 10);
 							SDL_RenderClear(Ren);
-							SDL_Texture* texture = loadTexture("WhatsApp-Image-2020-01-26-at-01.56.24.bmp", Ren);
+							SDL_Texture* texture = loadTexture("InitialisationBoard.bmp", Ren);
 							SDL_Color color = { 255,255,255,255 };
 							renderTexture12(texture, Ren, 0, 0);
 							renderTexture12(renderText(b, "Andrographis.ttf", color, 70, Ren), Ren, 630, 285);
