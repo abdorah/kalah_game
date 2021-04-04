@@ -12,10 +12,14 @@ At each time the player has to find which hole to choose so that the pieces in t
 3. The game start then and the user can choose a hole by clicking it:
 ![game board](GameBoard.bmp)
 4. Finally the smarter wins!
-<p align="center"><img align="left"  width="50%" src="Player1Win.bmp"></img><img align="left"  width="50%" src="Player2Win.bmp"></img></p>
+
+
+<p align="center">
+      <img align="center"  width="50%" src="Player1Win.bmp"/>
+      <img align="center"  width="50%" src="Player2Win.bmp"/>
+</p>
 
 ***
 
 ### Befor you use this code remember...
-      please remember that you need to set up you work space so that you can use sdl2 and sdl ttf and sdl image.
-
+please remember that you need to set up you work space so that you can use sdl2 and sdl ttf and sdl image.
