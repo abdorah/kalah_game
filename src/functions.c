@@ -265,10 +265,9 @@ void rewrite(struct Partie P)
 void read(int joueur1[7], int joueur2[7])
 {
 	FILE *fptr;
-	int a;
 	fptr = fopen("score_saving_file.txt", "r");
-	a = fscanf(fptr, "%d %d %d %d %d %d %d", &joueur2[6], &joueur2[5], &joueur2[4], &joueur2[3], &joueur2[2], &joueur2[1], &joueur2[0]);
-	a = fscanf(fptr, "%d %d %d %d %d %d %d", &joueur1[0], &joueur1[1], &joueur1[2], &joueur1[3], &joueur1[4], &joueur1[5], &joueur1[6]);
+	fscanf(fptr, "%d %d %d %d %d %d %d", &joueur2[6], &joueur2[5], &joueur2[4], &joueur2[3], &joueur2[2], &joueur2[1], &joueur2[0]);
+	fscanf(fptr, "%d %d %d %d %d %d %d", &joueur1[0], &joueur1[1], &joueur1[2], &joueur1[3], &joueur1[4], &joueur1[5], &joueur1[6]);
 	fclose(fptr);
 }
 void congra(int t, int *n, struct Partie P, SDL_Renderer *Ren)
