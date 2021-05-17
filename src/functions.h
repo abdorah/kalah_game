@@ -1,5 +1,9 @@
 #ifndef  FUNCTIONS_H_
 #define  FUNCTIONS_H_
+typedef enum{false, true} bool;
+void swap(char *a, char *b);
+void reverse(char *str, int length);
+char* itoa(int num, char* str, int base);
 typedef struct Partie{
 	int joueur1[7];
 	int joueur2[7];

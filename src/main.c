@@ -1,9 +1,12 @@
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_image.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_version.h>
+#include <SDL2/begin_code.h>
+#include <SDL2/close_code.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
 #include "functions.h"
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -12,6 +15,7 @@ int turn = 1, oldturn[100];
 int case_n=5;
 Partie Stack[100];
 int tournbr = 0;
+
 int main( int argc, char* args[] ){
 	int quit = 0;
 	int t ;

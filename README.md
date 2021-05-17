@@ -6,20 +6,29 @@
 At each time the player has to find which hole to choose so that the pieces in there will be distributed equaly and sequentiely on each hole of the board. Also one have to think of the best choice carefully so that he or she won't give a bonus score to the oponent.
 
 1. The game start by showing the main options board to the player:
-![main options board](OptionsMenu.bmp)
+![main options board](src/OptionsMenu.bmp)
 2. Then the player can initiate the number of pieces in all the holes of the board so that the game start:
-![initialization board](InitialisationBoard.bmp)
+![initialization board](src/InitialisationBoard.bmp)
 3. The game start then and the user can choose a hole by clicking it:
-![game board](GameBoard.bmp)
+![game board](src/GameBoard.bmp)
 4. Finally the smarter wins!
 
 
 <p align="center">
-      <img align="center"  width="50%" src="Player1Win.bmp"/>
-      <img align="center"  width="50%" src="Player2Win.bmp"/>
+      <img align="center"  width="50%" src="src/Player1Win.bmp"/>
+      <img align="center"  width="50%" src="src/Player2Win.bmp"/>
 </p>
 
 ***
 
 ### Befor you use this code remember...
-please remember that you need to set up you work space so that you can use sdl2 and sdl ttf and sdl image.
+Please remember that you need to set up you work space so that you can use sdl2 and sdl ttf and sdl image.
+
+***
+
+### How to run this code
+
+```sh
+$ make
+$ ./kalah
+```
