@@ -263,20 +263,22 @@ void read(int joueur1[7], int joueur2[7])
 {
 	FILE *file = fopen("score_saving_file.txt", "r");
 	int num;
-	for (int i = 0; i < 14; i++)
+	int list[7];
+	for (int i = 0; i < 7; i++)
+	{	
+		if (fscanf(file, "%d", &num) == 1)
+		{
+			joueur2[i] = num;
+		}
+	}
+	for (int i = 6; i >= 1; i--)
 	{
 		if (fscanf(file, "%d", &num) == 1)
 		{
-			if (i < 7)
-			{
-				joueur2[6 - i] = num;
-			}
-			else
-			{
-				joueur1[13 - i] = num;
-			}
+			list[i] = num;
 		}
 	}
+	joueur1 = list;
 	fclose(file);
 }
 void congra(int t, int *n, struct Partie P, SDL_Renderer *Ren)
