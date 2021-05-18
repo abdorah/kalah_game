@@ -28,7 +28,14 @@ Please remember that you need to set up you work space so that you can use sdl2 
 
 ### How to run this code
 
+It is simple to understand the Makefile commands. They follow one pattern:
+
 ```sh
-$ make
+$ make command
+``` 
+The commands in the Makefile are: all, clean and so on. However, they depend on the os you are using. So read the Makefile. After building the project you can run it using the launch.json file if you were using vscode. Otherwise run it like this:
+
+```sh
 $ ./kalah
-```
+``` 
+Remember to create a directory obj. Also, create a directory src/include and put the sdl librairies there, if you didn't install them globaly.

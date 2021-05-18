@@ -248,27 +248,36 @@ void LoadAll(struct Partie P, SDL_Renderer *renderer, int turn)
 void rewrite(struct Partie P)
 {
 	FILE *fptr;
-	fptr = fopen("score_saving_file.txt", "w");
-	fputs("\n", fptr);
+	fptr = fopen("score_saving_file.txt", "w+");
 	for (int j = 0; j < 7; j++)
 	{
-		fprintf(fptr, "%d\t", P.joueur2[6 - j]);
+		fprintf(fptr, "%d ", P.joueur2[6 - j]);
 	}
-	fputs("\n", fptr);
-	fputs("\n", fptr);
 	for (int j = 0; j < 7; j++)
 	{
-		fprintf(fptr, "%d\t", P.joueur1[j]);
+		fprintf(fptr, "%d ", P.joueur1[j]);
 	}
 	fclose(fptr);
 }
 void read(int joueur1[7], int joueur2[7])
 {
-	FILE *fptr;
-	fptr = fopen("score_saving_file.txt", "r");
-	fscanf(fptr, "%d %d %d %d %d %d %d", &joueur2[6], &joueur2[5], &joueur2[4], &joueur2[3], &joueur2[2], &joueur2[1], &joueur2[0]);
-	fscanf(fptr, "%d %d %d %d %d %d %d", &joueur1[0], &joueur1[1], &joueur1[2], &joueur1[3], &joueur1[4], &joueur1[5], &joueur1[6]);
-	fclose(fptr);
+	FILE *file = fopen("score_saving_file.txt", "r");
+	int num;
+	for (int i = 0; i < 14; i++)
+	{
+		if (fscanf(file, "%d", &num) == 1)
+		{
+			if (i < 7)
+			{
+				joueur2[6 - i] = num;
+			}
+			else
+			{
+				joueur1[13 - i] = num;
+			}
+		}
+	}
+	fclose(file);
 }
 void congra(int t, int *n, struct Partie P, SDL_Renderer *Ren)
 {
