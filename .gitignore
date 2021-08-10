@@ -1,4 +1,6 @@
-obj
+obj/
+build/
+.vscode/
 functions.d
 main.d
 kalah

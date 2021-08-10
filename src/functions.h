@@ -21,7 +21,7 @@ void one_range(int joueur_actif[7], int joueur_passif[7], int case_num, int * tu
 void Loadcase(int a, int i, int j, SDL_Renderer* renderer);
 void LoadAll(struct Partie P, SDL_Renderer* renderer,int turn);
 void rewrite(struct Partie P);
-void read(int joueur1[7], int joueur2[7]);
+void read(Partie partie);
 void tourjouer(int j, SDL_Renderer* renderer);
 void congra(int t,int *n, struct Partie P, SDL_Renderer* Ren);
 int isdeffirent(Partie p, Partie t);

@@ -28,14 +28,61 @@ Please remember that you need to set up you work space so that you can use sdl2 
 
 ### How to run this code
 
-It is simple to understand the Makefile commands. They follow one pattern:
+It is simple to run the code. In the section below we are going to work through two methods to run the code.
+
+1. Using `CMake`, (this example is for linux. However, using the same`CMakeLists.txt` you can run the application.)
 
 ```sh
+# Create the build directory
+$ mkdir ./build
+# Configure the CMakeLists.txt project
+$ cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc -Hkalah_game -Bkalah_game/build -G "Unix Makefiles"
+# Build the Project
+$ cmake --build /home/kotbi/Documents/Projects/kalah_game/build --config Debug --target all -j 6 --
+# Run the game
+$ cd build
+$ ./kalah
+```
+
+2. Using the Makefile commands. this is an easy way to run the application, since all commands follow one pattern:
+
+```sh
+# Create obj directory
+$ mkdir obj
 $ make command
 ``` 
-The commands in the Makefile are: all, clean and so on. However, they depend on the os you are using. So read the Makefile. After building the project you can run it using the launch.json file if you were using vscode. Otherwise run it like this:
+The commands in the Makefile are: `all`, `clean` and so on. However, the clean commands depend on the os you are using: `cleanw`, `cleandepw` in Windows, while  `clean`, `cleandep`. After building the project you can run it like this:
 
 ```sh
 $ ./kalah
 ``` 
-Remember to create a directory obj. Also, create a directory src/include and put the sdl librairies there, if you didn't install them globaly.
+>Also, remember to create src/include directory and put the sdl librairies there, if you didn't install them globaly.
+
+If you are using vscode you can run and debug the code easly using the following launch.json file to configure `gdb`:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/kalah",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
+```

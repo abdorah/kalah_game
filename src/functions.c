@@ -259,26 +259,28 @@ void rewrite(struct Partie P)
 	}
 	fclose(fptr);
 }
-void read(int joueur1[7], int joueur2[7])
+void read(Partie partie)
 {
 	FILE *file = fopen("score_saving_file.txt", "r");
 	int num;
-	int list[7];
-	for (int i = 0; i < 7; i++)
-	{	
-		if (fscanf(file, "%d", &num) == 1)
-		{
-			joueur2[i] = num;
-		}
-	}
-	for (int i = 6; i >= 1; i--)
+	int count = 0;
+	while (fscanf(file, "%d ", &num) != EOF)
 	{
-		if (fscanf(file, "%d", &num) == 1)
+		printf("%d ", num);
+		if (count > 6)
 		{
-			list[i] = num;
+			partie.joueur1[13-count] = num;
 		}
+		else
+		{
+			partie.joueur2[count] = num;
+		}
+		++count;
+		if (count==14)
+		{
+			break;
+		}	
 	}
-	joueur1 = list;
 	fclose(file);
 }
 void congra(int t, int *n, struct Partie P, SDL_Renderer *Ren)

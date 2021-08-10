@@ -52,10 +52,11 @@ int main(int argc, char *args[])
 					}
 					if (e.button.y > t + 78 && e.button.y < t + 138 && e.button.x < 625 && e.button.x > 397)
 					{
-						read(P.joueur1, P.joueur2);
 						if (Is_It_The_End(P.joueur1, P.joueur2, atoi(b)))
 						{
 							quit = 1;
+						} else {
+							read(P);
 						}
 					}
 					if (e.button.y > t + 148 && e.button.y < t + 208 && e.button.x < 625 && e.button.x > 397)
